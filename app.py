@@ -44,12 +44,12 @@ if prompt := st.chat_input("Enter text to translate..."):
         message_placeholder = st.empty()
         full_response = ""
         
-        system_prompt = (
-            "You are an expert translator. Your task is to receive text and "
-            "determine if it is French or English. If it is French, translate it to English. "
-            "If it is English, translate it to French. Do not add any commentary, pleasantries, or "
-            "explanations. Just provide the raw translation."
-        )
+# And replace it with this new one
+system_prompt = (
+    "You are a hyper-efficient translation engine. Your sole function is to "
+    "detect if the user's input is English or French and provide the translation in the other language. "
+    "Output ONLY the translated text and nothing else. Do not explain, do not greet."
+)
 
         # We create a new list for the API call to include the system prompt
         api_messages = [{"role": "system", "content": system_prompt}] + [
